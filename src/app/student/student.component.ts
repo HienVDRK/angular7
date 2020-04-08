@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../models/student';
 import { STUDENTS } from '../mock-data/mock-students';
+import { StudentService } from '../services/student.service';
 @Component({
 
   selector: 'app-student',
@@ -11,9 +12,16 @@ export class StudentComponent implements OnInit {
   students = STUDENTS;
   selectedStudent: Student;
 
-  constructor() { }
+  constructor(
+    private studentService: StudentService
+  ) { }
 
   ngOnInit() {
+    this.getStudent();
+  }
+
+  getStudent(): void {
+    this.students = this.studentService.getListStudents();
   }
 
   onClick(student: Student): void {
