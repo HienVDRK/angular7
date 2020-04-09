@@ -1,0 +1,56 @@
+<div class="container">
+  <h1>Reactive Forms</h1>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name"> First Name:</label>
+      <input type="text" class="form-control" formControlName="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="name"> Last Name:</label>
+      <input type="text" class="form-control" formControlName="lastName">
+    </div>
+
+    <div formGroupName="address">
+      <h3>Address</h3>
+
+      <div class="form-group">
+        <label for="name"> Street:</label>
+        <input type="text" class="form-control" formControlName="street">
+      </div>
+
+      <div class="form-group">
+        <label for="name"> City:</label>
+        <input type="text" class="form-control" formControlName="city">
+      </div>
+
+
+      <div class="form-group">
+        <label for="name"> State:</label>
+        <input type="text" class="form-control" formControlName="state">
+      </div>
+
+      <div class="form-group">
+        <label for="name"> Zip Code:</label>
+        <input type="text" class="form-control" formControlName="zip">
+      </div>
+    </div>
+    <p>
+      form value firstName: {{ profileForm.value.firstName | json}}
+    </p>
+    <p>
+      form status: {{ profileForm.status | json}}
+    </p>
+    <!-- <p>
+    form untouched: {{ profileForm.untouched | json}}
+  </p>
+  <p>
+    form text change: {{ profileForm.dirty | json}}
+  </p> -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+    <!-- <button type="submit" [disabled]="profileForm.status == 'INVALID'">Submit 2</button> -->
+  </form>
+
+</div>
