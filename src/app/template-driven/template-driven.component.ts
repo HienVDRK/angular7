@@ -15,14 +15,14 @@ export class TemplateDrivenComponent implements OnInit {
   powers = ['Really Smart', 'Super Flexible',
     'Super Hot', 'Weather Changer'];
 
-  model = new Employee(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+  model = new Employee(10, 'HienVu','hien@gmail.com', this.powers[0], 'DemoBT');
 
   submitted = false;
 
   onSubmit() { this.submitted = true; }
 
   newEmployee() {
-    this.model = new Employee(42, '', '');
+    this.model = new Employee(100, '', '', '');
   }
 
 }
