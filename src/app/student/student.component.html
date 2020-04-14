@@ -1,10 +1,10 @@
-<a *ngFor="let student of students"
+<!-- <a *ngFor="let student of students"
     routerLink="/detail/{{student.id}}">
   <div>
     <h4>{{student.name}}</h4>
   </div>
-</a>
-
+</a> -->
+<div class="container">
 <h2>List Students</h2>
 <ul>
   <li *ngFor="let student of students" [class.selected]="student === selectedStudent"  (click)="onClick(student)">
@@ -13,3 +13,4 @@
 </ul>
 
 <app-detail [student]='selectedStudent'></app-detail>
+</div>

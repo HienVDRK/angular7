@@ -1,6 +1,6 @@
 <div class="container">
   <div [hidden]="submitted">
-    <h1>Hero Form</h1>
+    <h1>Employee Form</h1>
     <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
@@ -29,7 +29,7 @@
           </div>
           <div *ngIf="email.errors.email">
             Email is error format.
-          </div> 
+          </div>
         </div>
       </div>
 
