@@ -11,6 +11,10 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HttpclientComponent } from './httpclient/httpclient.component';
+import { PipeComponent } from './pipe/pipe.component';
+import { DependencyServicesComponent } from './dependency-services/dependency-services.component';
+import { EmployeeService } from '../app/services/employee.service';
+import { ChildrenRouteComponent } from './children-route/children-route.component'
 
 @NgModule({
   declarations: [
@@ -21,6 +25,9 @@ import { HttpclientComponent } from './httpclient/httpclient.component';
     TemplateDrivenComponent,
     PagenotfoundComponent,
     HttpclientComponent,
+    PipeComponent,
+    DependencyServicesComponent,
+    ChildrenRouteComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import { HttpclientComponent } from './httpclient/httpclient.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,21 +9,22 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HttpclientComponent implements OnInit {
 
-  listData: Observable<any>;
+  readonly ROOT_URL = 'https://jsonplaceholder.typicode.com/users'
+  listData: Observable<any>
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    let params = new HttpParams().set('id', '1')
-    let headers = new HttpHeaders().set('Authorization', 'auth-token')
-    this.http.get<any>(`https://jsonplaceholder.typicode.com/users`, { params, headers }).subscribe(results => {
+    // const params = new HttpParams().set('id', '1')
+    // const headers = new HttpHeaders().set('Authorization', 'auth-token')
+    this.http.get<any>(this.ROOT_URL).subscribe(results => {
       this.listData = results
     }, errs => console.log('errs', errs))
   }
 
-  GetTenItem(){
-    let headers = new HttpHeaders().set('Authorization', 'auth-token')
-    this.http.get<any>(`https://jsonplaceholder.typicode.com/users`, { headers }).subscribe(results => {
-      this.listData = results
-    }, errs => console.log('errs', errs))
-  }
+  // GetTenItem(){
+  //   const headers = new HttpHeaders().set('Authorization', 'auth-token')
+  //   this.http.get<any>(this.ROOT_URL, { headers }).subscribe(results => {
+  //     this.listData = results
+  //   }, errs => console.log('errs', errs))
+  // }
 }

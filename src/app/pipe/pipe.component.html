@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h1> Bài Pipe</h1>
+
+  <h4>{{ name }}</h4>
+  <h4>LowerCase: {{ name | lowercase}}</h4>
+  <h4>UpperCase: {{ name | uppercase}}</h4>
+  <h4>TitleCase: {{ message | titlecase}}</h4>
+
+  <h4>Lấy giá trị từ vị trí đầu tiên đến vị trí thứ 5: {{ name | slice:0:5}}</h4>
+
+  <h4>Json: {{ person | json }}</h4>
+
+  <h4>Phần trăm: {{ 0.25 | percent }}</h4>
+
+  <h4>Đơn vị tiền tệ: {{ 0.25 | currency }}</h4>
+  <h4>Đơn vị tiền tệ: {{ 0.25 | currency: 'GBP': 'code'}}</h4>
+
+  <h4>Date: {{ date }}</h4>
+  <h4>Date: {{ date | date: 'short' }}</h4>
+  <h4>ShortDate: {{ date | date: 'shortDate' }}</h4>
+  <h4>ShortTime: {{ date | date: 'shortTime' }}</h4>
+
+  <button class="btn btn-primary" (click)= "children()">Children route</button>
+  <router-outlet></router-outlet>
+</div>
